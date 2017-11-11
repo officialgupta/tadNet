@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var synaptic = require('synaptic');
+var $ = require('jQuery');
 
 var Neuron = synaptic.Neuron,
 	Layer = synaptic.Layer,
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/synaptic',express.static(path.join(__dirname, '/node_modules/synaptic/dist/')));
 
 app.use('/', index);
 app.use('/users', users);
