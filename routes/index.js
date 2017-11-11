@@ -13,9 +13,9 @@ router.get('/about', function(req, res){
   });
 });
 
-router.get('/contact', function(req, res){
-  res.render('contact', {
-    title: 'Contact'
+router.get('/launch', function(req, res){
+  res.render('launch', {
+    title: 'Launch'
   });
 });
 

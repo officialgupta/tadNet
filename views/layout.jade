@@ -4,7 +4,18 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
-  body
+    script.
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        console.log(canvas.getContext);
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          for (i = 0; i < 20; i++) { 
+            ctx.fillRect(Math.random()*150, Math.random()*150, 10, 10);
+          }
+        }
+      }
+  body(onload="draw();")
     header
       nav
         ul
@@ -13,17 +24,11 @@ html
           li 
             a(href="/about") About
           li 
-            a(href="/contact") Contact
+            a(href="/launch") Launch
     section#wrapper
         block content
         footer 
           section.css-table
             section.four-column
               section.cell
-                p Need a prettier website Need a prettier website Need a prettier website
-              section.cell
-                p Need a prettier website Need a prettier website Need a prettier website
-              section.cell
-                p Need a prettier website Need a prettier website Need a prettier website
-              section.cell
-                p Need a prettier website Need a prettier website Need a prettier website
+                p Need a prettier website!
