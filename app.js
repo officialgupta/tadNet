@@ -5,6 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
+var synaptic = require('synaptic');
+
+var Neuron = synaptic.Neuron,
+	Layer = synaptic.Layer,
+	Network = synaptic.Network,
+	Trainer = synaptic.Trainer,
+	Architect = synaptic.Architect;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
