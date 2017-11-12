@@ -4,11 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Julius+Sans+One")
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
     script(type='text/javascript', src='/synaptic/synaptic.min.js')
     script(type='text/javascript', src='/javascripts/network.js')
     script.
-      var foodArray = [0, 0];
+      var foodArray = [350, 175];
 
       var nameinput;
       var ageinput;
@@ -17,10 +18,18 @@ html
       var ginginput;
       
       var Coords = [];
-      for(u=0; u < 10; u++){ // 10 change to users
+      for(u=0; u < 200; u++){ // 10 change to users
       Coords.push(0); //x Coord
       Coords.push(0); //y coord
-      Coords.push(5); //speed
+      if(ageinput>40){
+        Coords.push(3);
+      } else if (ageinput>25){
+        Coords.push(4);
+      } else if (ageinput>13){
+        Coords.push(5);
+      } else{
+        Coords.push(6);
+      }
       }
       console.log(Coords);
       function draw() {
@@ -39,6 +48,9 @@ html
         var ctx = canvas.getContext('2d');  
         console.log("I MOVED");
         ctx.clearRect(0, 0, 700, 350);
+        ctx.fillStyle="#F66808";
+        ctx.fillRect(350, 175, 15,15);
+        ctx.fillStyle="#07A507";
         for (i = 0; i < Coords.length; i+=3) { 
             adjArr = getNextDir(Coords[i], Coords[i+1], foodArray);
             Coords[i]=Coords[i]+Coords[i+2]*adjArr[1]-Coords[i+2]*adjArr[3];
