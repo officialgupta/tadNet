@@ -94,27 +94,25 @@ function retrain() {
 
 retrain(); // Start the training
 
-function getNextDir(coordsX, coordsY, fArray) {
+function getNextDir(coordsX, coordsY, fArray, mod) {
     // process coordinates to get foodInRange and direction differences
     var foodInRange = 0;
     var range = 50;
     var top_, right, bottom, left;
     top_ = right = bottom = left = 0;
 
-    for (var i=0; i<fArray.length; i+=2) {
-        if (coordsX - range <= fArray[i] && fArray[i] <= coordsX + range || coordsY - range <= fArray[i+1] && fArray[i+1] <= coordsY + range) {
-            foodInRange = 1;
-        }
-        if (coordsX < fArray[i]) {
-            right = 1;
-        } else if (coordsX > fArray[i]) {
-            left = 1;
-        }
-        if (coordsY < fArray[i+1]) {
-            bottom = 1;
-        } else if (coordsY > fArray[i+1]) {
-            top_ = 1;
-        }
+    if (coordsX - range <= fArray[mod*2] && fArray[mod*2] <= coordsX + range || coordsY - range <= fArray[mod*2+1] && fArray[mod*2+1] <= coordsY + range) {
+        foodInRange = 1;
+    }
+    if (coordsX < fArray[mod*2]) {
+        right = 1;
+    } else if (coordsX > fArray[mod*2]) {
+        left = 1;
+    }
+    if (coordsY < fArray[mod*2+1]) {
+        bottom = 1;
+    } else if (coordsY > fArray[mod*2+1]) {
+        top_ = 1;
     }
 
     console.log(foodInRange);

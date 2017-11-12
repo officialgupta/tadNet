@@ -9,7 +9,9 @@ html
     script(type='text/javascript', src='/synaptic/synaptic.min.js')
     script(type='text/javascript', src='/javascripts/network.js')
     script.
-      var foodArray = [350, 175];
+      var foodArray = [350, 175, 50, 50, 600, 200];
+      var counter = 0;
+      var index = 0;
 
       var nameinput;
       var ageinput;
@@ -48,15 +50,20 @@ html
         var ctx = canvas.getContext('2d');
         console.log("I MOVED");
         ctx.clearRect(0, 0, 700, 350);
+        if (counter == 100) {
+            index++;
+            counter = 0;
+        }
         ctx.fillStyle="#F66808";
-        ctx.fillRect(350, 175, 15,15);
+        ctx.fillRect(foodArray[index%3*2], foodArray[index%3*2+1], 15,15);
         ctx.fillStyle="#07A507";
-        for (i = 0; i < Coords.length; i+=3) { 
-            adjArr = getNextDir(Coords[i], Coords[i+1], foodArray);
+        for (i = 0; i < Coords.length; i+=3) {
+            adjArr = getNextDir(Coords[i], Coords[i+1], foodArray, index%3);
             Coords[i]=Coords[i]+Coords[i+2]*adjArr[1]-Coords[i+2]*adjArr[3];
             Coords[i+1]=Coords[i+1]+Coords[i+2]*adjArr[2]-Coords[i+2]*adjArr[0];
             ctx.fillRect(Coords[i], Coords[i+1], 5, 5);
         }
+        counter++;
       }
       function formChanged(){
         nameinput = document.getElementsByName("name-input")[0].value;
