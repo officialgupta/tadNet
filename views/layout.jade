@@ -14,6 +14,12 @@ html
       //- 
       //- }
       var foodArray = [0, 0];
+
+      var nameinput;
+      var ageinput;
+      var optinput;
+      var glinput;
+      var ginginput;
       
       var Coords = [];
       for(u=0; u < 10; u++){ // 10 change to users
@@ -44,6 +50,13 @@ html
             Coords[i+1]=Coords[i+1]+Coords[i+2]*adjArr[2]-Coords[i+2]*adjArr[0];
             ctx.fillRect(Coords[i], Coords[i+1], 5, 5);
         }
+      }
+      function formChanged(){
+        nameinput = document.getElementsByName("name-input")[0].value;
+        ageinput = document.getElementsByName("age-input")[0].value;
+        optinput = document.getElementsByName("opt-input")[0].value;
+        glinput = document.getElementsByName("gl-input")[0].value;
+        ginginput = document.getElementsByName("ging-input")[0].value;
       }
   body(onload="draw();")
     header
