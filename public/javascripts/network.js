@@ -97,7 +97,7 @@ retrain(); // Start the training
 function getNextDir(coordsX, coordsY, fArray) {
     // process coordinates to get foodInRange and direction differences
     var foodInRange = 0;
-    var range = 10;
+    var range = 50;
     var top_, right, bottom, left;
     top_ = right = bottom = left = 0;
 

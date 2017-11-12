@@ -8,12 +8,8 @@ html
     script(type='text/javascript', src='/synaptic/synaptic.min.js')
     script(type='text/javascript', src='/javascripts/network.js')
     script.
-      //- var foodArray = [0, 0, 0, 0, 0, 0];
-      //- 
-      //- for (var i=0; i<foodArray.length; i+=2) {
-      //- 
-      //- }
-      var foodArray = [0, 0];
+      
+      var foodArray = [100, 120];
       
       var Coords = [];
       for(u=0; u < 10; u++){ // 10 change to users
@@ -35,7 +31,7 @@ html
       }
       function move(){
         var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');  
+        var ctx = canvas.getContext('2d');
         console.log("I MOVED");
         ctx.clearRect(0, 0, 700, 350);
         for (i = 0; i < Coords.length; i+=3) { 
