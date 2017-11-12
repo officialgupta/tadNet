@@ -2,20 +2,20 @@ extends layout
 
 block content
   h1(class='name') NetSquare 
-  form
+  form(action="/launch")
     div
       label(class='qbox') What is your name?
     div 
       input(type="text")
     div
       br
-      label(class='qbox') What is your age?
+      label(class='qbox') Are you younger than 20?
     div
       input(type="text")
     
     div
       br
-      label(class='qbox') What is your emotion right now?
+      label(class='qbox') Are you optimistic or pessimistic?
     div
       input(type="text")
       
@@ -34,4 +34,4 @@ block content
     div
       br
       br
-      input(id="done", type="submit")
+      input(id="done", type="submit", onclick="location.href='/launch'")
