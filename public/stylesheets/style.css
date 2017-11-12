@@ -1,13 +1,45 @@
 body {
   font: 62.5%/1.5 Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
   text-align: center;
-  background: #ccc;
+  background: url('https://image.freepik.com/free-vector/abstract-background-with-a-3d-pattern_1319-68.jpg');
+  padding-top: 90px
 }
 #wrapper {
-  width: 920px;
-  text-align: left;
+  width: 720px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   background: #fff;
   padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0px 20px 5px #888888;
+}
+
+.name {
+	color:green;
+	font-size:260%;
+	}
+
+.qbox {
+	font-family: "Julius Sans One", sans-serif;
+  color: green;
+  font-weight: 900;
+}
+
+input{
+font-family: 'Julius Sans One', sans-serif;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+font-weight: 900;
+}
+
+#done {
+
+	padding: 6px;
+	width: 180px;
+	white-space: nowrap; 
+	-moz-box-shadow: 0px 0px 10px green;
+	-webkit-box-shadow: 0px 0px 10px green;
+	box-shadow: 0px 0px 10px green;
 }
