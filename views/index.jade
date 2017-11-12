@@ -2,36 +2,36 @@ extends layout
 
 block content
   h1(class='name') NetSquare 
-  form(action="/launch")
+  form(name="questions", onsubmit="return formChanged()", action="/launch")
     div
       label(class='qbox') What is your name?
     div 
-      input(type="text")
+      input(type="text", name="name-input", onkeyup="formChanged()" onchange="formChanged()")
     div
       br
       label(class='qbox') Are you younger than 20?
     div
-      input(type="text")
+      input(type="text", name="age-input", onkeyup="formChanged()" onchange="formChanged()")
     
     div
       br
       label(class='qbox') Are you optimistic or pessimistic?
     div
-      input(type="text")
+      input(type="text", name="opt-input", onkeyup="formChanged()" onchange="formChanged()")
       
     div
       br
       label(class='qbox') Do you wear glasses?
     div
-      input(type="text")
+      input(type="text", name="gl-input", onkeyup="formChanged()" onchange="formChanged()")
     
     div
       br
       label(class='qbox') Are you ginger?
     div
-      input(type="text")
+      input(type="text", name="ging-input", onkeyup="formChanged()" onchange="formChanged()")
     div
     div
       br
       br
-      input(id="done", type="submit", onclick="location.href='/launch'")
+      input(id="done", type="button", value="Go!", onclick="window.location.href='/launch'")
