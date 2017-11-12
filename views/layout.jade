@@ -3,12 +3,20 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Julius+Sans+One")
 
     script(type='text/javascript', src='/synaptic/synaptic.min.js')
     script(type='text/javascript', src='/javascripts/network.js')
     script.
+      //- var foodArray = [0, 0, 0, 0, 0, 0];
+      //- 
+      //- for (var i=0; i<foodArray.length; i+=2) {
+      //- 
+      //- }
+      var foodArray = [295, 445];
+      var dirArray = getNextDir(300, 450, foodArray);
+      console.log(dirArray);
+      
       var Coords = [];
       for(u=0; u < 10; u++){ // 10 change to users
       Coords.push(0); //x Coord
