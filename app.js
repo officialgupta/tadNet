@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var synaptic = require('synaptic');
-var $ = require('jQuery');
 
 var Neuron = synaptic.Neuron,
 	Layer = synaptic.Layer,
