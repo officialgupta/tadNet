@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1(class='name') NetSquare 
-  form(action="/launch")
+  form(name="questions", onsubmit="submitform", action="/launch")
     div
       label(class='qbox') What is your name?
     div 
