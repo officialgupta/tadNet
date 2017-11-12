@@ -9,14 +9,34 @@ html
     script(type='text/javascript', src='/synaptic/synaptic.min.js')
     script(type='text/javascript', src='/javascripts/network.js')
     script.
+      var Coords = [];
+      for(u=0; u < 10; u++){ // 10 change to users
+      Coords.push(0); //x Coord
+      Coords.push(0); //y coord
+      Coords.push(5); //speed
+      }
+      console.log(Coords);
       function draw() {
         var canvas = document.getElementById('canvas');
-        console.log(canvas.getContext);
         if (canvas.getContext) {
           var ctx = canvas.getContext('2d');
-          for (i = 0; i < 20; i++) { 
-            ctx.fillRect(Math.random()*150, Math.random()*150, 10, 10);
+          for (i = 0; i < Coords.length; i+=3) {
+            Coords[i]=Math.random()*690;
+            Coords[i+1]=Math.random()*340;
+            ctx.fillRect(Coords[i], Coords[i+1], 5, 5);
           }
+        }
+      }
+      function move(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');  
+        console.log("I MOVED");
+        ctx.clearRect(0, 0, 700, 350);
+        adjArr = [1,0,0,1]; //change to in
+        for (i = 0; i < Coords.length; i+=3) { 
+            Coords[i]=Coords[i]+Coords[i+2]*adjArr[1]-Coords[i+2]*adjArr[3];
+            Coords[i+1]=Coords[i+1]+Coords[i+2]*adjArr[2]-Coords[i+2]*adjArr[0];
+            ctx.fillRect(Coords[i], Coords[i+1], 5, 5);
         }
       }
   body(onload="draw();")
